@@ -24,7 +24,7 @@ public class Problem3 {
 				randomNum.add(ans[random]);
 			}
 		}
-		System.out.println("======");
+		System.out.println("===test===");
 		System.out.println("======");
 		System.out.println("======");
 		System.out.print(randomNum.toArray());
