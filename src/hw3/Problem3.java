@@ -11,11 +11,21 @@ public class Problem3 {
 		System.out.println("阿文...請輸入你討厭哪個數字？");
 		Scanner sr = new Scanner(System.in);
 		int hateNumber = sr.nextInt();
-		pro.selectNum(hateNumber, hateNumber)
+		List<Integer> randomNum = new ArrayList<Integer>();
 		
 		System.out.println("可以選擇的數字有：");
-		int[] select = pro.selectNum(hateNumber);
+		int[] ans = pro.selectNum(pro.countNum(hateNumber), hateNumber);
 		
+		for(int i =0; i < ans.length; i++) {
+			int random = (int)(Math.random() * pro.countNum(hateNumber));
+			if(randomNum.contains(ans[random])) {
+				i--;
+			}else {
+				randomNum.add(ans[random]);
+			}
+		}
+		
+		System.out.print(randomNum.toArray());
 //		for(int i = 1; i < 50; i++) {
 //			if(i % 10 == hateNumber || i / 10 == hateNumber)
 //				continue;
@@ -31,6 +41,7 @@ public class Problem3 {
 	}
 	
 	
+	
 	public int[] selectNum(int count, int hateNumber) {
 		int total = 0;
 		int[] select = new int[count];
@@ -38,9 +49,9 @@ public class Problem3 {
 			if(i % 10 == hateNumber || i / 10 == hateNumber)
 				continue;
 			else {
+				select[total] = i;
 				total++;
 			}
-				select[total] = i;
 				System.out.print(i + " ");
 		}
 		
@@ -50,16 +61,17 @@ public class Problem3 {
 		return select;
 	}
 	
+	
 	public int countNum(int hateNumber) {
+		int total = 0;
 		for(int i = 1; i < 50; i++) {
 			if(i % 10 == hateNumber || i / 10 == hateNumber)
 				continue;
 			else {
 				total++;
 			}
-				select[total] = i;
-				System.out.print(i + " ");
 		}
+		return total;
 	}
 
 }
