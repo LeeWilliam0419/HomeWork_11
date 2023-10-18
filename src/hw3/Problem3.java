@@ -25,6 +25,7 @@ public class Problem3 {
 			}
 		}
 		System.out.println("===master===");
+		System.out.println("===test===");
 		System.out.println("======");
 		System.out.println("======");
 		System.out.print(randomNum.toArray());
