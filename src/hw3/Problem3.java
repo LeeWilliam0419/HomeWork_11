@@ -24,7 +24,7 @@ public class Problem3 {
 				randomNum.add(ans[random]);
 			}
 		}
-		
+		System.out.println("======");
 		System.out.print(randomNum.toArray());
 //		for(int i = 1; i < 50; i++) {
 //			if(i % 10 == hateNumber || i / 10 == hateNumber)
