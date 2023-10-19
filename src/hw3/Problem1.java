@@ -45,7 +45,8 @@ public class Problem1 {
 		inputTri.close();
 	}
 
-	// 獲得邊長不重複的元素數量
+	
+	//獲得邊長不重複的元素數量
 	public int uniqueArrCount2(int[] sideLength) {
 		
 		//Set集合可以收集到不重複的元素
