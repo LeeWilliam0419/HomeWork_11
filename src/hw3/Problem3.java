@@ -11,18 +11,21 @@ public class Problem3 {
 		System.out.println("阿文...請輸入你討厭哪個數字？");
 		Scanner sr = new Scanner(System.in);
 		int hateNumber = sr.nextInt();
-		List<Integer> randomNum = new ArrayList<Integer>();//隨機6位數的集合
+		
+		//隨機6位數的集合
+		List<Integer> randomNum = new ArrayList<Integer>();
 		
 		System.out.println("可以選擇的數字有：");
-		int[] ans = pro.selectNum(pro.countNum(hateNumber), hateNumber);
+		//將可選擇的數字放入List的集合中
+		List<Integer> ans = pro.selectNum(hateNumber);
 		
 		//產生6個隨機數
 		for(int i =0; i < 6; i++) {
-			int random = (int)(Math.random() * pro.countNum(hateNumber));
-			if(randomNum.contains(ans[random])) {
+			int random = (int)(Math.random() * ans.size());
+			if(randomNum.contains(ans.get(random))) {
 				i--;
 			}else {
-				randomNum.add(ans[random]);
+				randomNum.add(ans.get(random));
 			}
 		}
 		
@@ -39,36 +42,38 @@ public class Problem3 {
 	
 	
 	//做出排除討厭數字後剩下的所有數字
-	public int[] selectNum(int count, int hateNumber) {
-		int total = 0;
-		int[] select = new int[count];
+	public List<Integer> selectNum(int hateNumber) {
+		List<Integer> sNum = new ArrayList<Integer>();
+//		int total = 0;
+//		int[] select = new int[count];
 		for(int i = 1; i < 50; i++) {
 			if(i % 10 == hateNumber || i / 10 == hateNumber)
 				continue;
 			else {
-				select[total] = i;
-				total++;
+				sNum.add(i);
+//				select[total] = i;
+//				total++;
 			}
 				System.out.print(i + " ");
 		}
 		
 		System.out.println();
-		System.out.println("總共有：" +total + "個 \n");
+		System.out.println("總共有：" +sNum.size() + "個 \n");
 		
-		return select;
+		return sNum;
 	}
 	
 	//算出排除討厭數字後剩下的所有數字的數量
-	public int countNum(int hateNumber) {
-		int total = 0;
-		for(int i = 1; i < 50; i++) {
-			if(i % 10 == hateNumber || i / 10 == hateNumber)
-				continue;
-			else {
-				total++;
-			}
-		}
-		return total;
-	}
+//	public int countNum(int hateNumber) {
+//		int total = 0;
+//		for(int i = 1; i < 50; i++) {
+//			if(i % 10 == hateNumber || i / 10 == hateNumber)
+//				continue;
+//			else {
+//				total++;
+//			}
+//		}
+//		return total;
+//	}
 
 }
