@@ -44,15 +44,13 @@ public class Problem3 {
 	//做出排除討厭數字後剩下的所有數字
 	public List<Integer> selectNum(int hateNumber) {
 		List<Integer> sNum = new ArrayList<Integer>();
-//		int total = 0;
-//		int[] select = new int[count];
+
 		for(int i = 1; i < 50; i++) {
 			if(i % 10 == hateNumber || i / 10 == hateNumber)
 				continue;
 			else {
 				sNum.add(i);
-//				select[total] = i;
-//				total++;
+
 			}
 				System.out.print(i + " ");
 		}
@@ -63,17 +61,5 @@ public class Problem3 {
 		return sNum;
 	}
 	
-	//算出排除討厭數字後剩下的所有數字的數量
-//	public int countNum(int hateNumber) {
-//		int total = 0;
-//		for(int i = 1; i < 50; i++) {
-//			if(i % 10 == hateNumber || i / 10 == hateNumber)
-//				continue;
-//			else {
-//				total++;
-//			}
-//		}
-//		return total;
-//	}
 
 }
