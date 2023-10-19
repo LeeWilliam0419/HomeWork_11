@@ -11,12 +11,13 @@ public class Problem3 {
 		System.out.println("阿文...請輸入你討厭哪個數字？");
 		Scanner sr = new Scanner(System.in);
 		int hateNumber = sr.nextInt();
-		List<Integer> randomNum = new ArrayList<Integer>();
+		List<Integer> randomNum = new ArrayList<Integer>();//隨機6位數的集合
 		
 		System.out.println("可以選擇的數字有：");
 		int[] ans = pro.selectNum(pro.countNum(hateNumber), hateNumber);
 		
-		for(int i =0; i < ans.length; i++) {
+		//產生6個隨機數
+		for(int i =0; i < 6; i++) {
 			int random = (int)(Math.random() * pro.countNum(hateNumber));
 			if(randomNum.contains(ans[random])) {
 				i--;
@@ -24,27 +25,20 @@ public class Problem3 {
 				randomNum.add(ans[random]);
 			}
 		}
-		System.out.println("===test===");
-		System.out.println("======");
-		System.out.println("======");
-		System.out.println("======");
-		System.out.print(randomNum.toArray());
-//		for(int i = 1; i < 50; i++) {
-//			if(i % 10 == hateNumber || i / 10 == hateNumber)
-//				continue;
-//			else
-//				total++;
-//				System.out.print(i + " ");
-//		}
 		
-//		System.out.println();
-//		System.out.print("總共有：" +total + "個");
+		System.out.println("抽取的6個隨機亂數為：");
+		
+		//顯示6個隨機數
+		for(int a : randomNum) {
+			System.out.print(a + " ");
+		}
+
 		
 		sr.close();
 	}
 	
 	
-	
+	//做出排除討厭數字後剩下的所有數字
 	public int[] selectNum(int count, int hateNumber) {
 		int total = 0;
 		int[] select = new int[count];
@@ -59,12 +53,12 @@ public class Problem3 {
 		}
 		
 		System.out.println();
-		System.out.println("總共有：" +total + "個");
+		System.out.println("總共有：" +total + "個 \n");
 		
 		return select;
 	}
 	
-	
+	//算出排除討厭數字後剩下的所有數字的數量
 	public int countNum(int hateNumber) {
 		int total = 0;
 		for(int i = 1; i < 50; i++) {
