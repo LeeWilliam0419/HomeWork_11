@@ -15,7 +15,10 @@ public class Problem1 {
 		Arrays.sort(tri);
 		Problem1 count = new Problem1();
 
+		//先判斷是否為三角形
 		if ((tri[0] + tri[1] > tri[2]) && tri[0] > 0 && tri[1] > 0 && tri[2] > 0) {
+			
+			//以三角形邊長相同的數量判斷是否為正三角形、等腰三角形、其他三角形
 			switch (count.uniqueArrCount2(tri)) {
 			case 1:
 				System.out.print("正三角形");
@@ -28,6 +31,7 @@ public class Problem1 {
 				}
 				break;
 			default:
+				//以兩邊平方和是否等於長邊平方判斷是否為直角三角形
 				if (Math.pow(tri[0], 2) + Math.pow(tri[1], 2) == Math.pow(tri[2], 2)) {
 					System.out.print("直角三角形");
 				} else {
@@ -43,6 +47,8 @@ public class Problem1 {
 
 	// 獲得邊長不重複的元素數量
 	public int uniqueArrCount2(int[] sideLength) {
+		
+		//Set集合可以收集到不重複的元素
 		HashSet<Integer> unique = new HashSet<Integer>();
 		for (int a : sideLength) {
 			unique.add(a);

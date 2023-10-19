@@ -18,7 +18,7 @@ public class Problem2 {
 		sr.close();
 	}
 	
-	
+	//判斷猜數字與正確答案是否相同
 	public boolean compareNumber(int userNum, int ans) {
 		if(userNum > ans) {
 			System.out.println("猜錯囉，你的答案大於正確答案");
