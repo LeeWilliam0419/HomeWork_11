@@ -11,7 +11,7 @@ public class Problem3 {
 		System.out.println("阿文...請輸入你討厭哪個數字？");
 		Scanner sr = new Scanner(System.in);
 		int hateNumber = sr.nextInt();
-		List<Integer> randomNum = new ArrayList<Integer>()//隨機6位數的集合
+		List<Integer> randomNum = new ArrayList<Integer>();//隨機6位數的集合
 		
 		System.out.println("可以選擇的數字有：");
 		int[] ans = pro.selectNum(pro.countNum(hateNumber), hateNumber);
