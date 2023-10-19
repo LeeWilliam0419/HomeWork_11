@@ -50,7 +50,7 @@ public class Problem1 {
 //	}
 	
 	
-	
+	//獲得邊長不重複的元素數量
 	public int uniqueArrCount2(int[] sideLength) {
 		HashSet<Integer> unique = new HashSet<Integer>();
 		for(int a : sideLength) {
