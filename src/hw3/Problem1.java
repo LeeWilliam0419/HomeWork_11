@@ -2,7 +2,6 @@ package hw3;
 
 import java.util.Scanner;
 import java.util.Arrays;
-import java.util.HashSet;
 
 public class Problem1 {
 	public static void main(String[] args) {
@@ -45,22 +44,17 @@ public class Problem1 {
 		inputTri.close();
 	}
 	
-	//獲得邊長不重複的元素數量
-//	public int uniqueArrCount(int[] sideLength) {
-//		int ans = 0;
-//		ans = sideLength[0];
-//	}
 	
 	
 	//獲得邊長不重複的元素數量
 	public int uniqueArrCount2(int[] sideLength) {
 		
-		//Set集合可以收集到不重複的元素
-		HashSet<Integer> unique = new HashSet<Integer>();
-		for (int a : sideLength) {
-			unique.add(a);
-		}
-		return unique.size();
+		if(sideLength[0] == sideLength[1] && sideLength[0] == sideLength[2]) {
+			return 1;
+		}else if(sideLength[0] == sideLength[1] || sideLength[0] == sideLength[2] || sideLength[2] == sideLength[1])
+			return 2;
+		else
+			return 3;
 	}
 
 }
