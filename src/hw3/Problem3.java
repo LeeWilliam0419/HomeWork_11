@@ -57,6 +57,7 @@ public class Problem3 {
 		return total;
 	}
 
+	//可選擇數字的陣列
 	public int[][] selNumArray(int hateNumber, int total) {
 
 		int ans = 1;
