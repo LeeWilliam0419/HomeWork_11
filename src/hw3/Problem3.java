@@ -52,7 +52,7 @@ public class Problem3 {
 		}
 
 		System.out.println();
-		System.out.println("總共有：" + total + "個 \n");
+//		System.out.println("總共有：" + total + "個 \n");
 
 		return total;
 	}
@@ -79,6 +79,7 @@ public class Problem3 {
 
 		}
 
+		System.out.println("總共有：" + total + "個數字可選 \n");
 		return a;
 	}
 
