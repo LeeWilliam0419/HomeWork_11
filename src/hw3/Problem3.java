@@ -53,6 +53,7 @@ public class Problem3 {
 
 			}
 				System.out.print(i + " ");
+				
 		}
 		
 		System.out.println();
