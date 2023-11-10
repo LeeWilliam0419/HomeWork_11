@@ -1,7 +1,9 @@
 package hw3;
 
-import java.util.Scanner;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
 
 public class Problem1 {
 	public static void main(String[] args) {
@@ -48,12 +50,15 @@ public class Problem1 {
 	// 獲得邊長不重複的元素數量
 	public int uniqueArrCount2(int[] sideLength) {
 
-		if (sideLength[0] == sideLength[1] && sideLength[0] == sideLength[2]) {
-			return 1;
-		} else if (sideLength[0] == sideLength[1] || sideLength[0] == sideLength[2] || sideLength[2] == sideLength[1])
-			return 2;
-		else
-			return 3;
+		Set<Integer> tri = new HashSet<>();
+		for(int i = 0; i < sideLength.length; i++) tri.add(sideLength[i]);
+		return tri.size();
+//		if (sideLength[0] == sideLength[1] && sideLength[0] == sideLength[2]) {
+//			return 1;
+//		} else if (sideLength[0] == sideLength[1] || sideLength[0] == sideLength[2] || sideLength[2] == sideLength[1])
+//			return 2;
+//		else
+//			return 3;
 	}
 
 }
