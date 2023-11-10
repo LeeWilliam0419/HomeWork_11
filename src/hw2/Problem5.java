@@ -6,7 +6,7 @@ public class Problem5 {
 	public static void main(String[] args) {
 		int total = 0;
 		
-		System.out.print("可以選擇的數字有：");
+		System.out.println("可以選擇的數字有：");
 		for(int i = 1; i < 50; i++) {
 			if(i % 10 == 4 || i / 10 == 4)
 				continue;
