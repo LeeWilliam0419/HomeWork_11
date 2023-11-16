@@ -1,6 +1,6 @@
 package hw9;
 
-class Account{
+class Account{  
 	int money = 0;
 	synchronized public void save(int money) {
 		while(this.money > 3000) {
@@ -44,8 +44,10 @@ class Mom extends Thread{
 	@Override
 	public void run() {
 		for(int i = 1; i <= 10; i++) {
-			account.save(2000);
+			if(Problem2.end) account.save(2000);
+			else break;
 		}
+		Problem2.end = false;
 	}
 }
 
@@ -58,12 +60,15 @@ class Student extends Thread{
 	@Override
 	public void run() {
 		for(int i = 1; i <= 10; i++) {
-			account.cost(1000);
+			if(Problem2.end) account.cost(1000);
+			else break;
 		}
+		Problem2.end = false;
 	}
 }
 
 public class Problem2 {
+	public static boolean end = true;
 	public static void main(String[] args) {
 		Account a = new Account();
 		Mom mom = new Mom(a);
@@ -72,8 +77,5 @@ public class Problem2 {
 		mom.start();
 		student.start();
 
-		while(mom.isAlive() && student.isAlive()) {}
-			mom.stop();
-			student.stop();
 	}
 }
